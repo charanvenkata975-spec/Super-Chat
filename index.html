@@ -1,309 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="manifest" href="manifest.json">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Chat</title>
+    <title>Super Chat - WhatsApp Web Style</title>
 </head>
 <body>
-    <!-- APP ROOT CONTAINER -->
-    <div class="app-root">
+    <!-- ROOT APP CONTAINER -->
+    <div class="super-chat-app">
         
-        <!-- TOP HEADER (Global) -->
-        <header class="app-header">
-            <div class="header-left">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMCAxMEwxMiAxOGwyMCAtOHoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4K" alt="Profile" class="avatar-small">
-                <h1 class="app-name">Super Chat</h1>
-            </div>
-            <div class="header-right">
-                <button class="icon-btn" aria-label="Search">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDE5TDExIDExbTUgNS0yIDJsLTEgMWwtMi0yIDItMloiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+" alt="Search">
-                </button>
-                <button class="icon-btn" aria-label="Menu">
-                    <span class="dots-menu">⋮⋮⋮</span>
-                </button>
-            </div>
-        </header>
-
-        <!-- MAIN CONTENT AREA -->
-        <main class="main-content">
+        <!-- LEFT SIDEBAR (CHAT LIST) -->
+        <aside class="chat-sidebar">
             
-            <!-- CHATS SCREEN (Default View) -->
-            <section class="screen active" id="chats-screen">
-                <div class="chat-list">
-                    <!-- Chat Item 1 -->
-                    <article class="chat-item unread">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5BPC90ZXh0Pgo8L3N2Zz4K" alt="Sarah" class="chat-avatar">
-                        <div class="chat-info">
-                            <div class="chat-header">
-                                <h3 class="user-name">Sarah Wilson</h3>
-                                <span class="message-time">2:30 PM</span>
-                            </div>
-                            <p class="last-message">Hey! Are you free this weekend?</p>
-                            <span class="unread-badge">3</span>
-                        </div>
-                    </article>
-
-                    <!-- Chat Item 2 -->
-                    <article class="chat-item">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5KPC90ZXh0Pgo8L3N2Zz4K" alt="John" class="chat-avatar">
-                        <div class="chat-info">
-                            <div class="chat-header">
-                                <h3 class="user-name">John Doe</h3>
-                                <span class="message-time">Yesterday</span>
-                            </div>
-                            <p class="last-message">Thanks for the info!</p>
-                        </div>
-                    </article>
-
-                    <!-- Chat Item 3 -->
-                    <article class="chat-item">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5NPC90ZXh0Pgo8L3N2Zz4K" alt="Mike" class="chat-avatar">
-                        <div class="chat-info">
-                            <div class="chat-header">
-                                <h3 class="user-name">Mike Chen</h3>
-                                <span class="message-time">Mon</span>
-                            </div>
-                            <p class="last-message">See you tomorrow 👍</p>
-                        </div>
-                    </article>
+            <!-- APP HEADER SECTION -->
+            <header class="app-header">
+                <div class="header-left">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0IDRDMTguNDEgNCAxMyAxMC40MSAxMyAxNlMxOC40MSAyOSAyNCAyOUMyOS41OSA5IDMgMTMuNDEgMyAxNlMxMy4zMSAzIDI0IDN6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPHBhdGggZD0iTTI0IDIwQzI1LjEgMjAgMjYgMTkuMSAyNiAxOFYxMkMyNiAxMC45IDI1LjEgMTAgMjQgMTBTMjIgMTAuOSAyMiAxMkMxMiAxMiAxMiAxOCAxOCAyMFYyMkMyMCAyMy4xIDIxLjEgMjQgMjIgMjRIMTZDMTAuOSA1IDEwIDE0LjMgMTIgMTZWMThDMTIgMTkuMSAxMC45IDIwIDEwIDIwSDhWMjhIMTZDMjEuMSAyOCAyNCAyMi4xIDI0IDIwVjIwWiIgZmlsbD0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPgo=" alt="Profile Avatar" class="header-avatar">
+                    <h1 class="app-title">Super Chat</h1>
                 </div>
-            </section>
-
-            <!-- CHAT SCREEN -->
-            <section class="screen" id="chat-screen">
-                <!-- Chat Header -->
-                <header class="chat-header">
-                    <button class="back-btn" aria-label="Back">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDEySDVsMS40MS0xLjQxTDEwLjE3IDguNTcgMTIgMTBsMS44My0xLjgzIDEzLjE3IDUuMDMgLTEzLjE3IDUuMDMgLTEuODMgMS44M1oiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+" alt="Back">
+                <div class="header-right">
+                    <button class="header-icon" aria-label="New Chat">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 2H10v8h10V2zm-8 14H2v-2h8v2zm0-8H2V6h10v2zm10 8h-8v-2h8v2zm0-8h-8V6h8v2z"/>
+                        </svg>
                     </button>
-                    <div class="chat-user-info">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5TPC90ZXh0Pgo8L3N2Zz4K" alt="Sarah" class="chat-avatar-large">
-                        <div>
-                            <h3 class="user-name">Sarah Wilson</h3>
-                            <span class="user-status online">Online</span>
-                        </div>
-                    </div>
-                    <div class="chat-header-actions">
-                        <button class="icon-btn" aria-label="Call">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDUuMDRDMTMuMDYgNS4wNCAxMS4wNSAxLjM0IDExIDMuODhWOS4xMmMxLjY2IDAgMy4wNCAuMzUgNC4xNyAxLjA4bDMuOTEtMi45NWMuMjgtLjIxLjYyLS4xOS44My4wOGwxLjYgMS42Yy4yMS4yOC4yOS42NC4wOC44M2wtNC4xIDEuMjRjLjIzLjY1LjM4IDEuMzcuM38gMi4wNFYxOS41QzE5IDIxLjI2IDE3LjI2IDIzIDE1IDIzSDlDNi43NCAyMyA1IDE5LjI2IDUgMTcuNVYxNC4xNGMuNjMtLjQ4IDEuMzUtLjgyIDIuMDQtMS4wOGwtNC4xLTEuMjRjLS4yMS0uMjgtLjEzLS42NS4wOC0uODNsMS42LTEuNmMuMjEtLjI4LjU1LS4yOS44My4wOGwzLjkxIDIuOTVDOC45NiAxMC4zNiA5IDkuMTIgOSAzLjg4VjMuODh6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+" alt="Call">
-                        </button>
-                        <button class="icon-btn" aria-label="Video Call">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDEzSDUuNkwzIDE0Ljd2Mi45YzAgMS4xLjkgMiAxIDJjMCAuNS0uMiAxLS40IDEuM0g0YzEuMSAwIDIgLjkgMiAyczguOSAwIDEwLTJ2LTdjLTIuMSAwLTMuOSAxLjktNC45IDQuMUgxOGgtMloiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4K" alt="Video">
-                        </button>
-                    </div>
-                </header>
+                    <button class="header-icon" aria-label="Status">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="6" r="1"/>
+                            <circle cx="5" cy="7" r="1"/>
+                            <circle cx="19" cy="7" r="1"/>
+                        </svg>
+                    </button>
+                    <button class="header-icon" aria-label="Menu">
+                        <span class="menu-dots">⋮⋮⋮</span>
+                    </button>
+                </div>
+            </header>
 
-                <!-- Messages Area -->
-                <div class="messages-container">
-                    <div class="messages-list">
-                        <!-- Incoming Message -->
-                        <div class="message incoming">
-                            <div class="message-bubble">
-                                <p>Hey! Are you free this weekend? 😊</p>
-                                <span class="message-time">2:25 PM</span>
+            <!-- SEARCH BAR SECTION -->
+            <div class="search-section">
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search or start new chat">
+                </div>
+            </div>
+
+            <!-- CHAT LIST CONTAINER -->
+            <div class="chat-list-container">
+                <div class="chat-list">
+                    <!-- PINNED CHATS SECTION -->
+                    <section class="chat-section pinned-chats">
+                        <h2 class="section-title">PINNED</h2>
+                        <article class="chat-item pinned" data-chat-id="john-1">
+                            <div class="chat-avatar-container">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5KPC90ZXh0Pgo8L3N2Zz4K" alt="John" class="chat-avatar">
+                                <div class="pin-indicator"></div>
+                            </div>
+                            <div class="chat-content">
+                                <div class="chat-header">
+                                    <h3 class="chat-name">John Doe</h3>
+                                    <span class="chat-time">10:30</span>
+                                </div>
+                                <p class="chat-preview">Thanks for the info! Looking forward...</p>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- RECENT CHATS SECTION -->
+                    <section class="chat-section recent-chats">
+                        <h2 class="section-title">RECENT CHATS</h2>
+                        
+                        <!-- Chat Item 1 (Unread) -->
+                        <article class="chat-item unread" data-chat-id="sarah-1">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5TPC90ZXh0Pgo8L3N2Zz4K" alt="Sarah" class="chat-avatar">
+                            <div class="chat-content">
+                                <div class="chat-header">
+                                    <h3 class="chat-name">Sarah Wilson</h3>
+                                    <span class="chat-time">2:45 PM</span>
+                                </div>
+                                <p class="chat-preview">Hey! Are you free this weekend?</p>
+                                <div class="unread-indicator">
+                                    <span class="unread-count">4</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Chat Item 2 -->
+                        <article class="chat-item" data-chat-id="mike-1">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5NPC90ZXh0Pgo8L3N2Zz4K" alt="Mike" class="chat-avatar">
+                            <div class="chat-content">
+                                <div class="chat-header">
+                                    <h3 class="chat-name">Mike Chen</h3>
+                                    <span class="chat-time">Yesterday</span>
+                                </div>
+                                <p class="chat-preview">See you tomorrow at the office 👍</p>
+                            </div>
+                        </article>
+
+                        <!-- Chat Item 3 -->
+                        <article class="chat-item" data-chat-id="lisa-1">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1OCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5MPC90ZXh0Pgo8L3N2Zz4K" alt="Lisa" class="chat-avatar">
+                            <div class="chat-content">
+                                <div class="chat-header">
+                                    <h3 class="chat-name">Lisa Patel</h3>
+                                    <span class="chat-time">Mon</span>
+                                </div>
+                                <p class="chat-preview">Project update attached 📎</p>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT CHAT PANEL (ACTIVE CHAT) -->
+        <main class="chat-panel">
+            
+            <!-- CHAT HEADER -->
+            <header class="chat-header">
+                <button class="back-button" aria-label="Back to chats">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="chat-participant">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5TPC90ZXh0Pgo8L3N2Zz4K" alt="Sarah" class="participant-avatar">
+                    <div class="participant-info">
+                        <h2 class="participant-name">Sarah Wilson</h2>
+                        <span class="participant-status online">online</span>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <button class="action-button" aria-label="Search in chat">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                    <button class="action-button" aria-label="Audio call">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.25l2.2-2.2a1 1 0 011.27-.23 11.999 11.999 0 005.07 1.87 1 1 0 01.94 1.15v2.52a1 1 0 01-1 1A16 16 0 013 12a15.25 15.25 0 013.62-.89l-2-2a1 1 0 01-.38-1.22zM17 6a1 1 0 01-.94-.68A14.944 14.944 0 0012 3.06V5a1 1 0 01-.42.84L8.22 7A15.628 15.628 0 006 6.55V4a1 1 0 011-1h2a1 1 0 01.72.31l2.91 2.91A1 1 0 0112 7v2.06a14.944 14.944 0 00-4.06 2.32l-2.91-2.91A1 1 0 014 8H2a1 1 0 01-1-1V4a1 1 0 011-1h2.06A15.628 15.628 0 016 8.22l1.16-3.62A1 1 0 018 4h2z"/>
+                        </svg>
+                    </button>
+                    <button class="action-button" aria-label="Video call">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17 10.5V7c0-.83-.67-1.5-1.5-1.5H5c-.83 0-1.5.67-1.5 1.5v10c0 .83.67 1.5 1.5 1.5h10.5c.83 0 1.5-.67 1.5-1.5v-3.5H6z"/>
+                        </svg>
+                    </button>
+                    <button class="action-button" aria-label="Menu">
+                        <span class="menu-dots">⋮⋮⋮</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- CHAT MESSAGES AREA -->
+            <div class="messages-container">
+                <div class="messages-scrollable">
+                    <div class="messages-content">
+                        
+                        <!-- MESSAGE GROUP 1 -->
+                        <div class="message-group">
+                            <div class="message incoming">
+                                <div class="message-bubble">
+                                    <div class="message-content">
+                                        <p>Hey! Are you free this weekend? 😊</p>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2:25 PM</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Outgoing Message -->
-                        <div class="message outgoing">
-                            <div class="message-bubble">
-                                <p>Hey Sarah! Yeah I think so. What did you have in mind?</p>
-                                <span class="message-time">2:27 PM</span>
-                                <span class="message-status delivered">✓✓</span>
+                        <!-- MESSAGE GROUP 2 (Outgoing) -->
+                        <div class="message-group">
+                            <div class="message outgoing">
+                                <div class="message-bubble">
+                                    <div class="message-content">
+                                        <p>Hey Sarah! Yeah I think so. What did you have in mind?</p>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2:27 PM</span>
+                                        <span class="message-status delivered">✓✓</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Incoming Message with Image -->
-                        <div class="message incoming">
-                            <div class="message-bubble media">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjNGNEY2IiByeD0iMTIiLz4KPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI0ZGRiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5QaG90byI8L3RleHQ+Cjwvc3ZnPgo=" alt="Photo">
-                                <span class="message-time">2:30 PM</span>
+                        <!-- MESSAGE GROUP 3 (Media + Text) -->
+                        <div class="message-group">
+                            <div class="message incoming">
+                                <div class="message-bubble media-message">
+                                    <div class="message-media">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE2MCIgdmlld0JveD0iMCAwIDI0MCAxNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNDAiIGhlaWdodD0iMTYwIiBmaWxsPSIjRjNGNEY2IiByeD0iMTIiLz4KPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5QaG90byAoMjQweDE2MCk8L3RleHQ+Cjwvc3ZnPgo=" alt="Photo" class="media-image">
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2:30 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message incoming reply">
+                                <div class="message-bubble">
+                                    <div class="message-content">
+                                        <p>Check out this photo from our last meetup! Same place? 📍</p>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2:31 PM</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- MESSAGE GROUP 4 (Outgoing - Read) -->
+                        <div class="message-group">
+                            <div class="message outgoing">
+                                <div class="message-bubble">
+                                    <div class="message-content">
+                                        <p>Sounds perfect! 7 PM works great 👍</p>
+                                    </div>
+                                    <div class="message-meta">
+                                        <span class="message-time">2:33 PM</span>
+                                        <span class="message-status read">✓✓</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- STATUS SCREEN -->
-            <section class="screen" id="status-screen">
-                <header class="status-header">
-                    <h2>My Status</h2>
-                </header>
-                <div class="status-list">
-                    <!-- My Status -->
-                    <article class="status-item my-status">
-                        <div class="status-circle">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNGRkYiIHN0cm9rZT0iIzAwMEZGRiIgc3Ryb2tlLXdpZHRoPSI0Ii8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTUlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSItLjNlbSI+WDwvdGV4dD4KPC9zdmc+" alt="My Status">
-                        </div>
-                        <div class="status-info">
-                            <p>Just now</p>
-                        </div>
-                    </article>
-
-                    <!-- Viewed Status -->
-                    <article class="status-item viewed">
-                        <div class="status-circle">
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNGRkYiIHN0cm9rZT0iI0ZGMzgzIiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5TPC90ZXh0Pgo8L3N2Zz4K" alt="Sarah">
-                            <div class="status-ring"></div>
-                        </div>
-                        <div class="status-info">
-                            <h4>Sarah Wilson</h4>
-                            <p>Today, 10:30 AM</p>
-                        </div>
-                    </article>
+            <!-- MESSAGE INPUT AREA -->
+            <footer class="message-input-area">
+                <button class="input-action emoji-button" aria-label="Emoji">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                    </svg>
+                </button>
+                
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea class="message-input" placeholder="Type a message" rows="1"></textarea>
+                    </div>
                 </div>
-            </section>
 
-            <!-- CALLS SCREEN -->
-            <section class="screen" id="calls-screen">
-                <div class="calls-list">
-                    <!-- Missed Call -->
-                    <article class="call-item missed">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI0ZGQjAwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5NPC90ZXh0Pgo8L3N2Zz4K" alt="Mike" class="call-avatar">
-                        <div class="call-info">
-                            <h4 class="call-name">Mike Chen</h4>
-                            <span class="call-type">Video call</span>
-                        </div>
-                        <div class="call-actions">
-                            <button class="icon-btn call-btn">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDUuMDRDMTMuMDYgNS4wNCAxMS4wNSAxLjM0IDExIDMuODhWOS4xMmMxLjY2IDAgMy4wNCAuMzUgNC4xNyAxLjA4bDMuOTEtMi45NWMuMjgtLjIxLjYyLS4xOS44My4wOGwxLjYgMS42Yy4yMS4yOC4yOS42NC4wOC44M2wtNC4xIDEuMjRjLjIzLjY1LjM4IDEuMzcuM38gMi4wNFYxOS41QzE5IDIxLjI2IDE3LjI2IDIzIDE1IDIzSDlDNi43NCAyMyA1IDE5LjI2IDUgMTcuNVYxNC4xNGMuNjMtLjQ4IDEuMzUtLjgyIDIuMDQtMS4wOGwtNC4xLTEuMjRjLS4yMS0uMjgtLjEzLS42NS4wOC0uODNsMS42LTEuNmMuMjEtLjI4LjU1LS4yOS44My4wOGwzLjkxIDIuOTVDOC45NiAxMC4zNiA5IDkuMTIgOSAzLjg4VjMuODh6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+" alt="Call back">
-                            </button>
-                        </div>
-                        <span class="call-time">2h ago</span>
-                    </article>
-
-                    <!-- Outgoing Call -->
-                    <article class="call-item outgoing">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNGRkYiLz4KPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii0uM2VtIj5KPHAvdGV4dD4KPC9zdmc+" alt="John" class="call-avatar">
-                        <div class="call-info">
-                            <h4 class="call-name">John Doe</h4>
-                            <span class="call-type">Outgoing call</span>
-                        </div>
-                        <span class="call-time">Yesterday</span>
-                    </article>
+                <div class="input-actions">
+                    <button class="input-action attach-button" aria-label="Attach">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        </svg>
+                    </button>
+                    <button class="input-action camera-button" aria-label="Camera">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </button>
+                    <button class="input-action mic-button" aria-label="Voice message">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 3 5.47 6.91 5.97V20h-2v2h6v-2h-2v-1.03c3.9-.5 6.41-2.97 6.91-5.97.09-.6-.39-1.14-1-1.14z"/>
+                        </svg>
+                    </button>
+                    <button class="send-button" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
                 </div>
-            </section>
-
-            <!-- SETTINGS SCREEN -->
-            <section class="screen" id="settings-screen">
-                <div class="settings-list">
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Profile</h3>
-                            <p>Change profile photo, name</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Account</h3>
-                            <p>Privacy, security</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Chats</h3>
-                            <p>Backups, history</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Notifications</h3>
-                            <p>Use new universal sound</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Storage and Data</h3>
-                            <p>Manage storage usage</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item">
-                        <div class="settings-info">
-                            <h3>Help</h3>
-                            <p>Contact us, FAQ</p>
-                        </div>
-                        <span class="chevron">›</span>
-                    </article>
-                    <article class="settings-item logout">
-                        <div class="settings-info">
-                            <h3>Logout</h3>
-                        </div>
-                    </article>
-                </div>
-            </section>
+            </footer>
         </main>
-
-        <!-- MESSAGE INPUT AREA (Chat Screen Only) -->
-        <footer class="message-input-container" id="message-input">
-            <button class="input-btn" aria-label="Emoji">
-                😀
-            </button>
-            <div class="input-wrapper">
-                <input type="text" placeholder="Type a message" class="message-input">
-            </div>
-            <div class="input-actions">
-                <button class="input-btn" aria-label="Attachment">
-                    📎
-                </button>
-                <button class="input-btn" aria-label="Camera">
-                    📷
-                </button>
-                <button class="input-btn" aria-label="Microphone">
-                    🎤
-                </button>
-                <button class="send-btn" aria-label="Send">Send</button>
-            </div>
-        </footer>
-
-        <!-- BOTTOM NAVIGATION -->
-        <nav class="bottom-nav">
-            <button class="nav-item active" data-screen="chats-screen">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDNoLTItMkgzYy0xLjEuMC0yIC44OS0yIDJ2MTRjMCAxLjExLjg5IDIgMiAyaDI0YzEuMTEgMCAyLS44OSAyLTJWM0MxOSAxLjg5IDE5Ljg5IDEgMjEgMUgxOXpNMTIgNWE0IDQgMCAxIDEgMC04IDQgNCAwIDEgMSAwIDh6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+" alt="Chats">
-                <span>Chats</span>
-            </button>
-            <button class="nav-item" data-screen="status-screen">
-                <div class="status-indicator"></div>
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI2IiByPSIxIiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPGNpcmNsZSBjeD0iNSIgY3k9IjciIHI9IjEiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8Y2lyY2xlIGN4PSIxOSIgeT0iNyIgcj0iMSIgZmlsbD0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPgo=" alt="Status">
-                <span>Status</span>
-            </button>
-            <button class="nav-item" data-screen="calls-screen">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDFoMiAxNGgtMkwxNiAxaG0wIDBjLTEuMTEgMCAyLS44OSAyLTJTMTEuODkgMCAxNiAwek0yIDIzaC0yYy0xLjExIDAgMi0uODkgMi0yVjlIMlYyaDJsMiAwaDJ2MTRjMCAxLjExLjg5IDIgMiAyaDF6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz4KPC9zdmc+" alt="Calls">
-                <span>Calls</span>
-            </button>
-            <button class="nav-item" data-screen="settings-screen">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDhDNi40OCA4IDIgMTIuNDggMiAxOGMwIDMuMjYgMi40OCA1Ljc0IDUuNzIgNi4yMnYuMDZsLTEuMTctMS4xNWMtLjgzLS44My0xLjA3LTEuOTgtLjY0LTIuOTJsMS40NyAxLjQ3QzkuNjUgMjAuMDMgMTEgMTkuMDMgMTEgMThjMCAxLjA1LS4zNSAyLjAyLS45NSAyLjgybC0uMDktLjA5Yy0uNjcuMTItMS40Ni4yMS0yLjI0LjIxLTEuNjUgMC0zLTEuMzUtMy0zIDAtMS42NSAxLjM1LTMgMy0zIDEuNjUgMCAzLTEuMzUgMy0zIDAtLjU2LS4wNy0xLjA2LS4yMS0xLjU0bC0uMDktLjA5Yy44LTEuMjkgMi44Ny0xLjg3IDQuOTUtMS44NyAxLjQ2IDAgMi44Mi40NyA0LjA1IDEuMjdsMS40Ny0xLjQ3Yy40My0uNDMgMS4wMS0uMTkgMS4wMS0uNDMgMC0uMjgtLjE2LS41My0uNDUtLjc0TDIwLjAyIDUuMDJDMTguMjEgMy4yIDE1Ljc0IDIgMTIgMnMtNi40OCA1LjI0LTYuNDggMTF2LjA2bDEuMTcgMS4xNWMuODMuODMuOTYgMi4wMS40IDIuOTJsLTEuNDctMS40N0MxMy45NyAzLjkgMTUuOTcgNSAxNyAwYzEuNjUgMCAzIDEuMzUgMyAzIDEuNjUgMCAzLTEuMzUgMy0zIDAtMS42NS0xLjM1LTMgMy0zIDEuNjUgMCAzLTEuMzUgMy0zIDAtMS42NS0xLjM1LTMgMy0zeiIgZmlsbD0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPgo=" alt="Settings">
-                <span>Settings</span>
-            </button>
-        </nav>
 
         <!-- FLOATING AI ASSISTANT -->
         <div class="ai-assistant">
-            <button class="ai-fab" aria-label="AI Assistant">
-                <span>AI</span>
+            <button class="ai-button" aria-label="AI Assistant">
+                <div class="ai-icon">🤖</div>
+                <span class="ai-label">AI</span>
             </button>
+            
+            <!-- AI PANEL -->
             <div class="ai-panel">
-                <header class="ai-header">
-                    <h3>Super AI Assistant</h3>
-                    <button class="close-ai" aria-label="Close">×</button>
+                <header class="ai-panel-header">
+                    <h3 class="ai-title">Super AI Assistant</h3>
+                    <button class="ai-close" aria-label="Close AI">×</button>
                 </header>
-                <div class="ai-messages">
+                
+                <div class="ai-messages-container">
                     <div class="ai-message ai">
-                        <p>Hello! I'm here to help you chat smarter. Ask me anything! 🤖</p>
+                        <p>Hello! I'm your AI assistant. How can I help you chat better today? 🚀</p>
+                        <span class="ai-message-time">Just now</span>
+                    </div>
+                    <div class="ai-message user">
+                        <p>What can you do?</p>
+                        <span class="ai-message-time">1m ago</span>
+                    </div>
+                    <div class="ai-message ai">
+                        <p>I can help you with smart replies, summarize conversations, suggest emojis, and more! 😊</p>
+                        <span class="ai-message-time">30s ago</span>
                     </div>
                 </div>
-                <div class="ai-input-area">
-                    <input type="text" placeholder="Ask AI..." class="ai-input">
-                    <button class="ai-send">Send</button>
+                
+                <div class="ai-input-section">
+                    <input type="text" class="ai-input" placeholder="Ask AI anything...">
+                    <button class="ai-send" aria-label="Send to AI">→</button>
                 </div>
             </div>
         </div>
+
+        <!-- OPTIONAL SCREENS (Hidden by default) -->
+        
+        <!-- STATUS SECTION -->
+        <section class="status-panel" aria-hidden="true">
+            <header class="status-header">
+                <h2>My Status</h2>
+                <button class="status-action">Status</button>
+            </header>
+            <div class="status-list">
+                <!-- Status items would go here -->
+            </div>
+        </section>
+
+        <!-- CALLS SECTION -->
+        <section class="calls-panel" aria-hidden="true">
+            <div class="calls-header">
+                <h2>Calls</h2>
+                <button class="calls-action">New call</button>
+            </div>
+            <div class="calls-list">
+                <!-- Call history items -->
+            </div>
+        </section>
+
+        <!-- SETTINGS SECTION -->
+        <section class="settings-panel" aria-hidden="true">
+            <div class="settings-list">
+                <article class="settings-item">
+                    <div class="settings-info">
+                        <h3>Profile</h3>
+                        <p>Your profile picture and name</p>
+                    </div>
+                    <span class="settings-chevron">›</span>
+                </article>
+                <article class="settings-item">
+                    <div class="settings-info">
+                        <h3>Archived Chats</h3>
+                        <p>Keep chats off your main list</p>
+                    </div>
+                    <span class="settings-chevron">›</span>
+                </article>
+                <!-- More settings items -->
+            </div>
+        </section>
+
     </div>
 </body>
 </html>
